@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock</title>
+  </head>
+  <body>
+    
+    <h1 id="hour"></h1>
+
+    <script>
+    
+      const zero = (counter) => {
+        if (counter < 10) {
+          counter = "0" + counter;
+        }
+        return counter;
+      };
+      
+      zero.propTypes = {
+        counter: Number
+      }
+
+      setInterval(function () {
+        const today = new Date();
+        let hour = today.getHours();
+        let minutes = today.getMinutes();
+        let seconds = today.getSeconds();
+
+        minutes = zero(minutes);
+        seconds = zero(seconds);
+
+        document.getElementById(
+          "hour"
+        ).textContent = `${hour}:${minutes}:${seconds}`;
+      }, 1000);
+    
+    </script>
+  </body>
+</html>
