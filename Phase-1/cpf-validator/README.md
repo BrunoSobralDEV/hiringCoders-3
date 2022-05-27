@@ -1,0 +1,4 @@
+- inglês;
+- query $;
+- onsubmit (Funcionar com o enter);
+- cpf na msg de retorno;
