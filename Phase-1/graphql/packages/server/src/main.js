@@ -1,43 +1,29 @@
-import { createServer } from 'http';
-import { parse } from 'querystring'
+import express from 'express';
+import cors from 'cors';
 
-const server = createServer((req, res) => {
-  switch (req.url) {
-    case '/status': {
-      res.writeHead(200, {
-        'Content-Type': 'application/json'
-      });
-      res.write(JSON.stringify({
-        status: 'Okay',
-      }));
-      res.end();
-      break;
-    }
+const server = express();
 
-    case '/authenticate': {
-      let data = '';
 
-      req.on('data', (chunk) => {
-        data += chunk;
-      });
-      
-      req.on('end', () => {
-        const params = parse(data);
-        // res.write(file);
-        res.end();
-      })
-      break;
-    }
+server.get('/status', (_, res) => {
+  res.send({
+    status: 'Okay',
+  })
+})
 
-    default: {
-      res.writeHead(404, 'Service not found.');
-      res.end();
-    }
-  }
-});
+const enableCors = cors({origin: 'http://localhost:3000'});
+
+server
+  .options('/authenticate', enableCors)
+  .post('/authenticate', enableCors, express.json(), (req, res) => {
+  console.log('E-mail', req.body.email, 'Senha', req.body.password)
+
+  res.send({
+    Okay: true,
+  });
+})
 
 const PORT = process.env.PORT ? parseInt(process.env.PORT) : 8000;
-const HOSTNAME = '127.0.0.1';
+const HOSTNAME = 'localhost';
 // const HOSTNAME = process.env.HOSTNAME || '127.0.0.1';
 
 

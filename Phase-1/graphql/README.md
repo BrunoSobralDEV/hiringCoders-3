@@ -9,9 +9,13 @@
 - Rodar projeto a partir do root: `pnpm --filter @graphql/server run start`
 **
 ### React - web
-- Instalar React na pasta web: `pnpx create-react-app packages/web`
-- Instalar dependências com pnpm. Semelhante ao `yarn`: `pnpm --filter @graphql/web i`
+- Instalar React na pasta web: `pnpx create-react-app packages/web`;
+- Instalar dependências com pnpm. Semelhante ao `yarn`: `pnpm --filter @graphql/web i`;
+- Rodar: `pnpm --filter @graphql/web run start`
 ### GraphQL
 - Instalar: `pnpm --filter @graphql/server i graphql`
 ### Dependências
-`pnpm --filter @graphql/web i  react-router-dom`
+- React Router Dom: `pnpm --filter @graphql/web i  react-router-dom`
+- Express: `pnpm --filter @graphql/server i express`
+- Cors: `pnpm --filter @graphql/server i cors`
+- React Final Form: abstrair formulários complexos (Dica);
