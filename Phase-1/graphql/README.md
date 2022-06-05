@@ -14,8 +14,14 @@
 - Rodar: `pnpm --filter @graphql/web run start`
 ### GraphQL
 - Instalar: `pnpm --filter @graphql/server i graphql`
+### Express
+- Install: `pnpm --filter @graphql/server i express`
+### Apollo-Server-Express
+- Install: `pnpm  --filter @graphql/server i apollo-server-express`
 ### Dependências
 - React Router Dom: `pnpm --filter @graphql/web i  react-router-dom`
 - Express: `pnpm --filter @graphql/server i express`
 - Cors: `pnpm --filter @graphql/server i cors`
 - React Final Form: abstrair formulários complexos (Dica);
+- Apollo-server-express: `pnpm  --filter @graphql/server i apollo-server-express`
+- Nodemon: `pnpm --filter @graphql/server i -D nodemon`
