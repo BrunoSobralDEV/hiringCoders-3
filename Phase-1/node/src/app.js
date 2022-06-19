@@ -1,5 +1,5 @@
-const express = require('express');
-const routes = require('./router');
+import express from 'express';
+import routes from './router';
 
 class App {
   constructor() {
